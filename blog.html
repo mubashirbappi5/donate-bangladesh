@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- font-family: "Lexend", sans-serif; -->
+     <!-- font and colour -->
+     <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                dark1:'#111111',
+                dark2:'#111111B3',
+                primary:'#B4F461',
+                extra:'#F9F7F3'
+              },
+              fontFamily: {
+              lexend: "Lexend",
+             
+            },
+            }
+          }
+        }
+      </script>
+</head>
+<body>
+    <header class="sticky top-0 z-50">
+        <section class="bg-extra p-2 lg:p-6 ">
+          <!-- navber -->
+          <nav class="flex justify-between items-center  w-11/12 mx-auto ">
+         
+            <div class="">
+              <a id="home-btnn" class="btn  bg-primary text-dark1 font-semibold">Home </a>
+            </div>
+           
+             
+            </div>
+            <div class="  flex items-center gap-4">
+             
+              <img src="assets/logo.png" alt="">
+              <h2 class="font-semibold text-xl text-dark1">Donate Bangladesh</h2>
+             
+             
+            </div>
+            <div class=" hidden lg:flex justify-center items-center gap-3">
+              <img src="assets/coin.png" alt="">
+              <p class=" text-xl text-dark2 ">5500 BDT</p>
+              
+                
+              </div>
+           
+         
+         </nav>
+        </section>
+        
+  
+      </header>
+      <main class="my-12 w-11/12 mx-auto">
+        <h1 class="text-3xl font-bold text-dark1 mb-6">Important FAQ</h1>
+        <div class="collapse collapse-arrow bg-white border">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+            <div class="collapse-content">
+              <p>hello</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-white border">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+            <div class="collapse-content">
+              <p>hello</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-white border">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+            <div class="collapse-content">
+              <p>hello</p>
+            </div>
+          <div class="collapse collapse-arrow bg-white border">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+            <div class="collapse-content">
+              <p>hello</p>
+            </div>
+          </div>
+      </main>
+      <!-- js file -->
+       <script src="js/blog.js"></script>
+    
+</body>
+</html>
