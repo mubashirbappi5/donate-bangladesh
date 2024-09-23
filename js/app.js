@@ -82,7 +82,7 @@ document.getElementById('donate-now-btn').addEventListener("click",function(even
     //  history section
     const div = document.createElement('div')
     div.innerHTML = `<div class="border rounded-lg p-8">
-           <h3 class="font-bold text-xl text-black">${donateAmountInput} Taka is a ${header1.innerText}</h3>
+           <h3 class="font-bold text-xl text-black">${donateAmountInput} Taka is  ${header1.innerText}</h3>
             <p> ${Date()} </p>
           </div>`
 
