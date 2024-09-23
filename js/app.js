@@ -71,7 +71,7 @@ document.getElementById('donate-now-btn').addEventListener("click",function(even
         alert('insufficient balance')
         return
     }
-    else if(donateAmountInput ==0){
+    else if(donateAmountInput <=0){
         alert("minimum 1 taka you can donate")
         return
        }
@@ -110,7 +110,7 @@ document.getElementById('donte-now-2').addEventListener("click",function(e){
        alert("insufficient balance")
        return
    }
-   else if(donateInput2 ==0){
+   else if(donateInput2 <=0){
     alert("minimum 1 taka you can donate")
     return
    }
@@ -130,10 +130,14 @@ document.getElementById('donte-now-2').addEventListener("click",function(e){
 })
 
 // card-3
+
 document.getElementById('donate-now-3').addEventListener("click",function(e){
     e.preventDefault()
     const donateinput3 = getinputValueByid('donate-input-3');
+    
     if(isNaN(donateinput3)){
+      
+      
         alert("please provide valid amount number")
         return
       
@@ -142,9 +146,10 @@ document.getElementById('donate-now-3').addEventListener("click",function(e){
     const mainAmount = gettextNumberByid('main-amount')
     if(mainAmount < donateinput3){
         alert("insufficient balance")
+
         return
     }
-    else if(donateinput3 == 0){
+    else if(donateinput3 <= 0){
         alert("minimum 1 taka you can donate")
         return
     }
