@@ -1,22 +1,29 @@
+// coman fuction 1
+function selectId(id){
+    const idname = document.getElementById(id)
+    return idname
+}
+const historyBtn = selectId('history-btn')
+const donationBtn = selectId('donation-btn')
+const navberscroll =selectId('nav-scrol')
+const historySection = selectId('history-section')
+const donationSection = selectId('donation-section')
+const donateNowBtn = selectId('donate-now-btn')
+const header1 = selectId('header-1')
+const header2 = selectId('header2')
+const header3 = selectId('header-3')
+const modal = selectId('my_modal_1');
 
-const historyBtn = document.getElementById('history-btn')
-const donationBtn = document.getElementById('donation-btn')
-const navberscroll =document.getElementById('nav-scrol')
-const historySection = document.getElementById('history-section')
-const donationSection = document.getElementById('donation-section')
-const donateNowBtn = document.getElementById('donate-now-btn')
-const header1 = document.getElementById('header-1')
-const header2 = document.getElementById('header2')
-const header3 = document.getElementById('header-3')
+
 
 const donatesowDigt = document.getElementById('donate-digit')
-// input value
+// input value function -2
 function getinputValueByid(id){
     const inputValue = document.getElementById(id).value
     const inputNumber = parseFloat(inputValue)
     return inputNumber
 }
-// text number value function
+// text number value function-3
 function gettextNumberByid(id){
     const textValue = document.getElementById(id).innerText
     const number = parseFloat(textValue)
@@ -60,8 +67,13 @@ document.getElementById('donate-now-btn').addEventListener("click",function(even
     const donateAmountInput = getinputValueByid('donate-amount-input');
     if(isNaN(donateAmountInput)){
         alert("please provide valid amount number")
+        modal.style.display = "none";
+       
+        window.location.reload(true);
         return
     }
+    else{
+     modal.showModal()
    
     
      const donateDigitnumber = gettextNumberByid('donate-digit')
@@ -69,10 +81,14 @@ document.getElementById('donate-now-btn').addEventListener("click",function(even
      const availableAmount = mainAmount - donateAmountInput
      if(mainAmount < donateAmountInput){
         alert('insufficient balance')
+        modal.style.display = "none";
+        window.location.reload(true);
         return
     }
     else if(donateAmountInput <=0){
         alert("minimum 1 taka you can donate")
+        modal.style.display = "none";
+        window.location.reload(true);
         return
        }
      const donatetotal = donateAmountInput + donateDigitnumber
@@ -87,6 +103,7 @@ document.getElementById('donate-now-btn').addEventListener("click",function(even
           </div>`
 
      historySection.appendChild(div)
+    }
 
      
     
@@ -101,17 +118,25 @@ document.getElementById('donte-now-2').addEventListener("click",function(e){
     const donateInput2 = getinputValueByid('donate-input-2');
    if(isNaN(donateInput2)){
     alert("please provide valid amount number")
-    return
+    modal.style.display = "none";
+    window.location.reload(true);
    }
+   else{
+    modal.showModal()
+   
 
    const donateDigit2 = gettextNumberByid('donate-digit2')
    const mainAmount = gettextNumberByid('main-amount')
    if(mainAmount < donateInput2  ){
        alert("insufficient balance")
+       modal.style.display = "none";
+    window.location.reload(true);
        return
    }
    else if(donateInput2 <=0){
     alert("minimum 1 taka you can donate")
+    modal.style.display = "none";
+    window.location.reload(true);
     return
    }
    const availableAmount = mainAmount - donateInput2
@@ -126,6 +151,7 @@ document.getElementById('donte-now-2').addEventListener("click",function(e){
           </div>`
 
         document.getElementById('history-section').appendChild(div2)
+}
    
 })
 
@@ -134,23 +160,33 @@ document.getElementById('donte-now-2').addEventListener("click",function(e){
 document.getElementById('donate-now-3').addEventListener("click",function(e){
     e.preventDefault()
     const donateinput3 = getinputValueByid('donate-input-3');
+   
     
     if(isNaN(donateinput3)){
       
-      
+        modal.style.display = "none";
         alert("please provide valid amount number")
+        window.location.reload(true);
         return
       
     }
+    else{ 
+        
+    modal.showModal()
+    
+    
     const donateDigit3 = gettextNumberByid('donate-digit3')
     const mainAmount = gettextNumberByid('main-amount')
     if(mainAmount < donateinput3){
         alert("insufficient balance")
-
+        modal.style.display = "none";
+        window.location.reload(true);
         return
     }
     else if(donateinput3 <= 0){
         alert("minimum 1 taka you can donate")
+        modal.style.display = "none";
+        window.location.reload(true);
         return
     }
     const total3 = donateDigit3 + donateinput3 
@@ -168,4 +204,5 @@ document.getElementById('donate-now-3').addEventListener("click",function(e){
           </div>`
 
         document.getElementById('history-section').appendChild(div3)
+}
 })
