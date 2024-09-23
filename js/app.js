@@ -5,6 +5,7 @@ const navberscroll =document.getElementById('nav-scrol')
 const historySection = document.getElementById('history-section')
 const donationSection = document.getElementById('donation-section')
 const donateNowBtn = document.getElementById('donate-now-btn')
+const header1 = document.getElementById('header-1')
 
 const donatesowDigt = document.getElementById('donate-digit')
 // input value
@@ -71,6 +72,14 @@ document.getElementById('donate-now-btn').addEventListener("click",function(even
      const donatetotal = donateAmountInput + donateDigitnumber
      document.getElementById('donate-digit').innerText = donatetotal
      document.getElementById('main-amount').innerText = availableAmount
+
+    //  history section
+    const div = document.createElement('div')
+    div.innerHTML = `<div class="border rounded-lg p-8">
+           <h3 class="font-bold text-xl text-black">${donateAmountInput} Taka is ${header1.innerText}</h3>
+          </div>`
+
+     historySection.appendChild(div)
 
      
     
