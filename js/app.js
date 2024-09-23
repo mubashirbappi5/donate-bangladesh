@@ -7,6 +7,7 @@ const donationSection = document.getElementById('donation-section')
 const donateNowBtn = document.getElementById('donate-now-btn')
 const header1 = document.getElementById('header-1')
 const header2 = document.getElementById('header2')
+const header3 = document.getElementById('header-3')
 
 const donatesowDigt = document.getElementById('donate-digit')
 // input value
@@ -116,7 +117,7 @@ document.getElementById('donte-now-2').addEventListener("click",function(e){
    const total2 = donateDigit2+donateInput2
    document.getElementById('main-amount').innerText = availableAmount
    document.getElementById('donate-digit2').innerText = total2
-
+// history
    const div2 = document.createElement('div')
     div2.innerHTML = `<div class="border rounded-lg p-8">
            <h3 class="font-bold text-xl text-black">${donateInput2} Taka is ${header2.innerText}</h3>
@@ -124,4 +125,38 @@ document.getElementById('donte-now-2').addEventListener("click",function(e){
 
         document.getElementById('history-section').appendChild(div2)
    
+})
+
+// card-3
+document.getElementById('donate-now-3').addEventListener("click",function(e){
+    e.preventDefault()
+    const donateinput3 = getinputValueByid('donate-input-3');
+    if(isNaN(donateinput3)){
+        alert("please provide valid amount number")
+        return
+      
+    }
+    const donateDigit3 = getinputValueByid('donate-digit3')
+    const mainAmount = gettextNumberByid('main-amount')
+    if(mainAmount < donateinput3){
+        alert("insufficient balance")
+        return
+    }
+    else if(donateinput3 == 0){
+        alert("minimum 1 taka you can donate")
+        return
+    }
+
+    const availableAmount = mainAmount - donateinput3 
+    const total3 = donateDigit3+donateinput3 
+    document.getElementById('donate-digit3').innerText = total3
+    document.getElementById('main-amount').innerText = availableAmount
+
+// history
+    const div3 = document.createElement('div')
+    div3.innerHTML = `<div class="border rounded-lg p-8">
+           <h3 class="font-bold text-xl text-black">${donateinput3} Taka is ${header3.innerText}</h3>
+          </div>`
+
+        document.getElementById('history-section').appendChild(div3)
 })
