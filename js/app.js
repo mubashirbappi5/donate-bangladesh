@@ -83,6 +83,7 @@ document.getElementById('donate-now-btn').addEventListener("click",function(even
     const div = document.createElement('div')
     div.innerHTML = `<div class="border rounded-lg p-8">
            <h3 class="font-bold text-xl text-black">${donateAmountInput} Taka is a ${header1.innerText}</h3>
+            <p> ${Date()} </p>
           </div>`
 
      historySection.appendChild(div)
@@ -121,6 +122,7 @@ document.getElementById('donte-now-2').addEventListener("click",function(e){
    const div2 = document.createElement('div')
     div2.innerHTML = `<div class="border rounded-lg p-8">
            <h3 class="font-bold text-xl text-black">${donateInput2} Taka is ${header2.innerText}</h3>
+            <p> ${Date()} </p>
           </div>`
 
         document.getElementById('history-section').appendChild(div2)
@@ -136,7 +138,7 @@ document.getElementById('donate-now-3').addEventListener("click",function(e){
         return
       
     }
-    const donateDigit3 = getinputValueByid('donate-digit3')
+    const donateDigit3 = gettextNumberByid('donate-digit3')
     const mainAmount = gettextNumberByid('main-amount')
     if(mainAmount < donateinput3){
         alert("insufficient balance")
@@ -146,9 +148,10 @@ document.getElementById('donate-now-3').addEventListener("click",function(e){
         alert("minimum 1 taka you can donate")
         return
     }
-
+    const total3 = donateDigit3 + donateinput3 
+   
     const availableAmount = mainAmount - donateinput3 
-    const total3 = donateDigit3+donateinput3 
+   
     document.getElementById('donate-digit3').innerText = total3
     document.getElementById('main-amount').innerText = availableAmount
 
@@ -156,6 +159,7 @@ document.getElementById('donate-now-3').addEventListener("click",function(e){
     const div3 = document.createElement('div')
     div3.innerHTML = `<div class="border rounded-lg p-8">
            <h3 class="font-bold text-xl text-black">${donateinput3} Taka is ${header3.innerText}</h3>
+           <p> ${Date()} </p>
           </div>`
 
         document.getElementById('history-section').appendChild(div3)
