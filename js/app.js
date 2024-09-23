@@ -6,6 +6,7 @@ const historySection = document.getElementById('history-section')
 const donationSection = document.getElementById('donation-section')
 const donateNowBtn = document.getElementById('donate-now-btn')
 const header1 = document.getElementById('header-1')
+const header2 = document.getElementById('header2')
 
 const donatesowDigt = document.getElementById('donate-digit')
 // input value
@@ -65,10 +66,14 @@ document.getElementById('donate-now-btn').addEventListener("click",function(even
      const donateDigitnumber = gettextNumberByid('donate-digit')
      const mainAmount = gettextNumberByid('main-amount')
      const availableAmount = mainAmount - donateAmountInput
-     if(availableAmount < donateAmountInput){
+     if(mainAmount < donateAmountInput){
         alert('insufficient balance')
         return
     }
+    else if(donateAmountInput ==0){
+        alert("minimum 1 taka you can donate")
+        return
+       }
      const donatetotal = donateAmountInput + donateDigitnumber
      document.getElementById('donate-digit').innerText = donatetotal
      document.getElementById('main-amount').innerText = availableAmount
@@ -76,7 +81,7 @@ document.getElementById('donate-now-btn').addEventListener("click",function(even
     //  history section
     const div = document.createElement('div')
     div.innerHTML = `<div class="border rounded-lg p-8">
-           <h3 class="font-bold text-xl text-black">${donateAmountInput} Taka is ${header1.innerText}</h3>
+           <h3 class="font-bold text-xl text-black">${donateAmountInput} Taka is a ${header1.innerText}</h3>
           </div>`
 
      historySection.appendChild(div)
@@ -84,4 +89,39 @@ document.getElementById('donate-now-btn').addEventListener("click",function(even
      
     
 
+})
+
+
+
+// card-2
+document.getElementById('donte-now-2').addEventListener("click",function(e){
+    e.preventDefault()
+    const donateInput2 = getinputValueByid('donate-input-2');
+   if(isNaN(donateInput2)){
+    alert("please provide valid amount number")
+    return
+   }
+
+   const donateDigit2 = gettextNumberByid('donate-digit2')
+   const mainAmount = gettextNumberByid('main-amount')
+   if(mainAmount < donateInput2  ){
+       alert("insufficient balance")
+       return
+   }
+   else if(donateInput2 ==0){
+    alert("minimum 1 taka you can donate")
+    return
+   }
+   const availableAmount = mainAmount - donateInput2
+   const total2 = donateDigit2+donateInput2
+   document.getElementById('main-amount').innerText = availableAmount
+   document.getElementById('donate-digit2').innerText = total2
+
+   const div2 = document.createElement('div')
+    div2.innerHTML = `<div class="border rounded-lg p-8">
+           <h3 class="font-bold text-xl text-black">${donateInput2} Taka is ${header2.innerText}</h3>
+          </div>`
+
+        document.getElementById('history-section').appendChild(div2)
+   
 })
